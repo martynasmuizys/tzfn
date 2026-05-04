@@ -24,6 +24,7 @@ return function(palette, styles, groups)
 		["@string.special.symbol"] = { link = "@constant" },
 		["@string.special.path"] = { link = "@constant" },
 		["@string.special.url"] = { fg = palette.fg, underline = true },
+		["@string.special.url.comment"] = { fg = palette.muted, underline = true },
 
 		["@character"] = { link = "Character" },
 		["@character.special"] = { fg = util.blend(palette.red2, palette.red, 0.3) },
