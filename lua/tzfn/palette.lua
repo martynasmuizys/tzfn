@@ -37,45 +37,6 @@ local variants = {
 
 		none = "NONE",
 	},
-	light = {
-		-- idk anything about light themes
-		-- need elp with this perhaps idk
-		_nc = "#d8e4eb",
-		bg = "#dcf0fa",
-		surface = "#cce4f0",
-		overlay = "#b8d5e3",
-
-		fg = "#26242b",
-		muted = "#a4a9ab",
-		subtle = "#6f7375",
-
-		red = "#f84a12",
-		grn = "#36994e",
-		ylw = "#ffaf0a",
-		blu = "#558ba6",
-		mgt = "#a82a5f",
-		cyn = "#1da89d",
-
-		red2 = "#fa835c",
-		grn2 = "#5ecc79",
-		ylw2 = "#ffb724",
-		blu2 = "#79b9d9",
-		mgt2 = "#db4282",
-		cyn2 = "#30dbcd",
-
-		red3 = "#330f04",
-		grn3 = "#12331a",
-		ylw3 = "#332302",
-		blu3 = "#1a2b33",
-
-		err = "#d93b55",
-
-		hl1 = "#aec4cf",
-		hl2 = "#97b4c2",
-		hl3 = "#86a5b5",
-
-		none = "NONE",
-	},
 }
 
 if options.palette ~= nil and next(options.palette) then
@@ -87,8 +48,4 @@ if options.palette ~= nil and next(options.palette) then
 	end
 end
 
-if variants[options.variant] ~= nil then
-	return variants[options.variant]
-end
-
-return vim.o.background == "light" and variants.light or variants[options.dark_variant or "main"]
+return variants.main
