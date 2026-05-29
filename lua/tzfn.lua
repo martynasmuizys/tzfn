@@ -159,10 +159,7 @@ local function set_highlights()
 	end
 end
 
----@param variant Variant | nil
-function M.colorscheme(variant)
-	config.extend_options({ variant = variant })
-
+function M.colorscheme()
 	vim.opt.termguicolors = true
 	if vim.g.colors_name then
 		vim.cmd("hi clear")
@@ -170,12 +167,7 @@ function M.colorscheme(variant)
 	end
 	vim.g.colors_name = "tzfn"
 
-	if variant == "light" then
-		vim.o.background = "light"
-	elseif variant == "main" then
-		vim.o.background = "dark"
-	end
-
+	vim.o.background = "dark"
 	set_highlights()
 end
 

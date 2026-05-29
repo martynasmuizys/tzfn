@@ -1,4 +1,3 @@
----@alias Variant "main" | "light"
 ---@alias Palette { bg: string, surface: string, overlay: string, muted: string, subtle: string, fg: string, red: string, ylw: string, mgt: string, grn: string, blu: string, blu_b: string, grn_b: string}
 ---@alias PaletteColor "bg" | "surface" | "overlay" | "muted" | "subtle" | "fg" | "red" | "ylw" | "mgt" | "grn" | "blu" | "blu_b" | "grn_b" | "hl_low" | "hl_med" | "hl_high"
 ---@alias Highlight { link: string, inherit: boolean } | { fg: string, bg: string, sp: string, bold: boolean, italic: boolean, undercurl: boolean, underline: boolean, underdouble: boolean, underdotted: boolean, underdashed: boolean, strikethrough: boolean, inherit: boolean }
@@ -7,15 +6,6 @@ local config = {}
 
 ---@class Options
 config.options = {
-	---Set the desired variant: "auto" will follow the vim background,
-	---defaulting to `dark_variant` or "main" for dark and "light" for, well, light.
-	---@type "auto" | Variant
-	variant = "auto",
-
-	---Set the desired dark variant when `options.variant` is set to "auto".
-	---@type Variant
-	dark_variant = "main",
-
 	---Differentiate between active and inactive windows and panels.
 	dim_inactive_windows = false,
 
@@ -38,7 +28,7 @@ config.options = {
 
 	---@type table<string, string | PaletteColor>
 	groups = {
-		border = "red",
+		border = "cyn",
 		link = "blu2",
 		panel = "surface",
 
