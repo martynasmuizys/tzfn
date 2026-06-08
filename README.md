@@ -16,7 +16,6 @@
 ```lua
 {
     "sirzif/tzfn.nvim",
-    name = "tzfn"
     config = function()
         require("tzfn").setup({
             enable = {
@@ -34,78 +33,57 @@
 
 ```lua
 config.options = {
-    ---Set the desired variant: "auto" will follow the vim background,
-    ---defaulting to `dark_variant` or "main" for dark and "light" for, well, light.
-    ---@type "auto" | Variant
-    variant = "auto",
+	dim_inactive_windows = false,
 
-    ---Set the desired dark variant when `options.variant` is set to "auto".
-    ---@type Variant
-    dark_variant = "main",
+	extend_background_behind_borders = true,
 
-    ---Differentiate between active and inactive windows and panels.
-    dim_inactive_windows = false,
+	enable = {
+		terminal = true,
+	},
 
-    ---Extend background behind borders. Appearance differs based on which
-    ---border characters you are using.
-    extend_background_behind_borders = true,
+	styles = {
+		bold = false,
+		italic = true,
+		transparency = false,
+	},
 
-    enable = {
-        terminal = true,
-    },
+	palette = {},
 
-    styles = {
-        bold = false,
-        italic = true,
-        transparency = false,
-    },
+	groups = {
+		border = "cyn",
+		link = "blu2",
+		panel = "surface",
 
-    ---@type table<string, table<string, string>>
-    palette = {},
+		error = "err",
+		hint = "cyn",
+		info = "blu",
+		ok = "grn",
+		warn = "ylw",
+		note = "blu",
+		todo = "grn",
 
-    ---@type table<string, string | PaletteColor>
-    groups = {
-        border = "red",
-        link = "blu2",
-        panel = "surface",
+		git_add = "grn",
+		git_change = "ylw",
+		git_delete = "red",
+		git_dirty = "mgt",
+		git_ignore = "muted",
+		git_merge = "grn2",
+		git_rename = "grn",
+		git_stage = "grn2",
+		git_text = "mgt",
+		git_untracked = "subtle",
 
-        error = "err",
-        hint = "cyn",
-        info = "blu",
-        ok = "grn",
-        warn = "ylw",
-        note = "blu",
-        todo = "grn",
+		h1 = "red",
+		h2 = "mgt",
+		h3 = "cyn",
+		h4 = "blu",
+		h5 = "blu2",
+		h6 = "muted",
+	},
 
-        git_add = "grn",
-        git_change = "ylw",
-        git_delete = "red",
-        git_dirty = "mgt",
-        git_ignore = "muted",
-        git_merge = "grn2",
-        git_rename = "grn",
-        git_stage = "grn2",
-        git_text = "mgt",
-        git_untracked = "subtle",
+	highlight_groups = {},
 
-        ---@type string | PaletteColor
-        h1 = "red",
-        h2 = "mgt",
-        h3 = "cyn",
-        h4 = "blu",
-        h5 = "blu2",
-        h6 = "muted",
-    },
-
-    ---@type table<string, Highlight>
-    highlight_groups = {},
-
-    ---Called before each highlight group, before setting the highlight.
-    ---@param group string
-    ---@param highlight Highlight
-    ---@param palette Palette
-    ---@diagnostic disable-next-line: unused-local
-    before_highlight = function(group, highlight, palette) end,
+	before_highlight = function(group, highlight, palette) end,
 }
 ```
 
