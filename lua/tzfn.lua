@@ -31,8 +31,14 @@ local function set_highlights()
 		require("tzfn.groups.treesitter-context")(palette),
 		require("tzfn.groups.blink")(palette, styles),
 	}
+	-- for _, s in ipairs(sources) do
+	-- 	highlights = vim.tbl_deep_extend("force", highlights, s)
+	-- end
+
 	for _, s in ipairs(sources) do
-		highlights = vim.tbl_deep_extend("force", highlights, s)
+		for k, v in pairs(s) do
+			highlights[k] = v
+		end
 	end
 	local transparency_highlights = {
 		DiagnosticVirtualTextError = { fg = groups.error },
