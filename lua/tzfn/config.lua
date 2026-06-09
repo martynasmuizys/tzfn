@@ -6,9 +6,6 @@ local config = {}
 
 ---@class Options
 config.options = {
-	---Differentiate between active and inactive windows and panels.
-	dim_inactive_windows = false,
-
 	---Extend background behind borders. Appearance differs based on which
 	---border characters you are using.
 	extend_background_behind_borders = true,
@@ -21,44 +18,13 @@ config.options = {
 		bold = false,
 		italic = true,
 		transparency = false,
+
+		---Differentiate between active and inactive windows and panels.
+		dim_inactive = false,
 	},
 
 	---@type table<string, table<string, string>>
 	palette = {},
-
-	---@type table<string, string | PaletteColor>
-	groups = {
-		border = "cyn",
-		link = "blu2",
-		panel = "surface",
-
-		error = "err",
-		hint = "cyn",
-		info = "blu",
-		ok = "grn",
-		warn = "ylw",
-		note = "blu",
-		todo = "grn",
-
-		git_add = "grn",
-		git_change = "ylw",
-		git_delete = "red",
-		git_dirty = "mgt",
-		git_ignore = "muted",
-		git_merge = "grn2",
-		git_rename = "grn",
-		git_stage = "grn2",
-		git_text = "mgt",
-		git_untracked = "subtle",
-
-		---@type string | PaletteColor
-		h1 = "red",
-		h2 = "mgt",
-		h3 = "cyn",
-		h4 = "blu",
-		h5 = "blu2",
-		h6 = "muted",
-	},
 
 	---@type table<string, Highlight>
 	highlight_groups = {},

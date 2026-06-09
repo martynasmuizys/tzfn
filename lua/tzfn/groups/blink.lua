@@ -5,11 +5,16 @@ return function(palette, styles)
 		BlinkCmpDocBorder = { fg = palette.hl3 },
 		BlinkCmpGhostText = { fg = palette.muted },
 
-		BlinkCmpLabel = { fg = palette.muted },
-		BlinkCmpLabelDeprecated = { fg = palette.muted, strikethrough = true },
-		BlinkCmpLabelMatch = { fg = palette.fg, bold = styles.bold },
+		BlinkCmpLabel = { fg = palette.fg },
+		BlinkCmpLabelDeprecated = { fg = palette.subtle, strikethrough = true },
+		BlinkCmpLabelMatch = { fg = palette.blu2, bold = styles.bold },
 
-		BlinkCmpDefault = { fg = palette.hl2 },
+		-- BlinkCmpMenu = { fg = palette.blu, bg = palette.bg },
+		-- BlinkCmpMenuBorder = { fg = palette.subtle, bg = palette.bg },
+		-- -- BlinkCmpSignatureHelp = { fg = c.fg, bg = c.bg_float },
+		-- -- BlinkCmpSignatureHelpBorder = { fg = c.border_highlight, bg = c.bg_float },
+
+		BlinkCmpDefault = { fg = palette.bg },
 		BlinkCmpKindText = { fg = palette.grn },
 		BlinkCmpKindMethod = { fg = palette.blu },
 		BlinkCmpKindFunction = { fg = palette.blu },

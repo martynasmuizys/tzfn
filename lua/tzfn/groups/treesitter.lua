@@ -1,6 +1,6 @@
 local util = require("tzfn.util")
 
-return function(palette, styles, groups)
+return function(palette, styles)
 	return {
 		["@variable"] = { link = "Identifier" },
 		["@variable.builtin"] = { fg = util.blend(palette.mgt2, palette.mgt, 0.3) },
@@ -80,12 +80,12 @@ return function(palette, styles, groups)
 		["@comment"] = { link = "Comment" },
 		["@comment.documentation"] = { link = "Comment" },
 
-		["@comment.error"] = { fg = groups.error },
-		["@comment.warning"] = { fg = groups.warn },
-		["@comment.todo"] = { fg = groups.todo, bg = groups.todo, blend = 15 },
-		["@comment.hint"] = { fg = groups.hint, bg = groups.hint, blend = 15 },
-		["@comment.info"] = { fg = groups.info, bg = groups.info, blend = 15 },
-		["@comment.note"] = { fg = groups.note, bg = groups.note, blend = 15 },
+		["@comment.error"] = { fg = palette.err },
+		["@comment.warning"] = { fg = palette.ylw },
+		["@comment.todo"] = { fg = palette.grn, bg = palette.grn, blend = 15 },
+		["@comment.hint"] = { fg = palette.cyn, bg = palette.cyn, blend = 15 },
+		["@comment.info"] = { fg = palette.blu, bg = palette.blu, blend = 15 },
+		["@comment.note"] = { fg = palette.blu, bg = palette.blu, blend = 15 },
 
 		--- Markup
 		["@markup.strong"] = { bold = true },
@@ -101,7 +101,7 @@ return function(palette, styles, groups)
 		["@markup.link"] = { fg = palette.fg, underline = true },
 		["@markup.link.markdown_inline"] = { fg = palette.fg, underline = false },
 		["@markup.link.label"] = { fg = palette.grn2 },
-		["@markup.link.url"] = { fg = groups.link, underline = true },
+		["@markup.link.url"] = { fg = palette.blu2, underline = true },
 
 		["@markup.raw"] = { fg = palette.ylw },
 		["@markup.raw.block"] = { fg = palette.fg },
@@ -113,16 +113,16 @@ return function(palette, styles, groups)
 		-- Markdown headings
 
 		["@markup.heading"] = { link = "Title" },
-		["@markup.heading.1"] = { fg = groups.h1, bold = true },
-		["@markup.heading.2"] = { fg = groups.h2, bold = true },
-		["@markup.heading.3"] = { fg = groups.h3, bold = true },
-		["@markup.heading.4"] = { fg = groups.h4, bold = true },
-		["@markup.heading.5"] = { fg = groups.h5, bold = true },
-		["@markup.heading.6"] = { fg = groups.h6, bold = true },
+		["@markup.heading.1"] = { fg = palette.red, bold = true },
+		["@markup.heading.2"] = { fg = palette.mgt, bold = true },
+		["@markup.heading.3"] = { fg = palette.cyn, bold = true },
+		["@markup.heading.4"] = { fg = palette.cyn2, bold = true },
+		["@markup.heading.5"] = { fg = palette.blu, bold = true },
+		["@markup.heading.6"] = { fg = palette.blu2, bold = true },
 
-		["@diff.plus"] = { fg = groups.git_add, bg = groups.git_add, blend = 20 },
-		["@diff.minus"] = { fg = groups.git_delete, bg = groups.git_delete, blend = 20 },
-		["@diff.delta"] = { fg = groups.git_change, bg = groups.git_change, blend = 20 },
+		["@diff.plus"] = { fg = palette.grn, bg = palette.grn, blend = 20 },
+		["@diff.minus"] = { fg = palette.red, bg = palette.red, blend = 20 },
+		["@diff.delta"] = { fg = palette.ylw, bg = palette.ylw, blend = 20 },
 
 		["@tag"] = { link = "Tag" },
 		["@tag.attribute"] = { fg = palette.subtle },

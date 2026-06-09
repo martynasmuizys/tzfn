@@ -6,29 +6,15 @@ local function set_highlights()
 	local palette = require("tzfn.palette")
 	local styles = config.options.styles
 
-	local groups = {}
-	for group, color in pairs(config.options.groups) do
-		groups[group] = util.parse_color(color)
-	end
-
-	local function make_border(fg)
-		fg = fg or groups.border
-		return {
-			fg = fg,
-			bg = (config.options.extend_background_behind_borders and not styles.transparency) and palette.surface
-				or "NONE",
-		}
-	end
-
 	local highlights = {}
 	local sources = {
-		require("tzfn.groups.base")(palette, styles, groups, config, make_border),
-		require("tzfn.groups.treesitter")(palette, styles, groups),
-		-- require("tzfn.groups.semantic_tokens")(palette, groups),
-		require("tzfn.groups.telescope")(palette, groups, make_border),
+		require("tzfn.groups.base")(palette, styles),
+		require("tzfn.groups.treesitter")(palette, styles),
+		require("tzfn.groups.semantic-tokens")(palette, styles),
+		require("tzfn.groups.telescope")(palette, styles),
 		require("tzfn.groups.nvim-cmp")(palette, styles),
-		require("tzfn.groups.trouble")(palette, groups),
-		require("tzfn.groups.treesitter-context")(palette),
+		require("tzfn.groups.trouble")(palette, styles),
+		require("tzfn.groups.treesitter-context")(palette, styles),
 		require("tzfn.groups.blink")(palette, styles),
 	}
 	-- for _, s in ipairs(sources) do
@@ -41,39 +27,11 @@ local function set_highlights()
 		end
 	end
 	local transparency_highlights = {
-		DiagnosticVirtualTextError = { fg = groups.error },
-		DiagnosticVirtualTextHint = { fg = groups.hint },
-		DiagnosticVirtualTextInfo = { fg = groups.info },
-		DiagnosticVirtualTextOk = { fg = groups.ok },
-		DiagnosticVirtualTextWarn = { fg = groups.warn },
-
-		FloatBorder = { fg = groups.border, bg = "NONE" },
-		FloatTitle = { fg = palette.grn2, bg = "NONE", bold = styles.bold },
-		Folded = { fg = palette.fg, bg = "NONE" },
-		NormalFloat = { bg = "NONE" },
 		Normal = { fg = palette.fg, bg = "NONE" },
-		NormalNC = { fg = palette.fg, bg = config.options.dim_inactive_windows and palette._nc or "NONE" },
-		Pmenu = { fg = palette.subtle, bg = "NONE" },
-		PmenuExtra = { fg = palette.fg, bg = "NONE" },
-		PmenuKind = { fg = palette.blu, bg = "NONE" },
+		NormalNC = { fg = palette.fg, bg = styles.dim_inactive and palette._nc or "NONE" },
+		FoldColumn = { bg = "NONE" },
 		SignColumn = { fg = palette.fg, bg = "NONE" },
-		TabLine = { bg = "NONE", fg = palette.subtle },
 		TabLineFill = { bg = "NONE" },
-		TabLineSel = { fg = palette.fg, bg = "NONE", bold = styles.bold },
-
-		-- ["@markup.raw"] = { bg = "none" },
-		["@markup.raw.markdown_inline"] = { fg = palette.ylw },
-		-- ["@markup.raw.block"] = { bg = "none" },
-
-		TelescopeNormal = { fg = palette.subtle, bg = "NONE" },
-		TelescopePromptNormal = { fg = palette.fg, bg = "NONE" },
-		TelescopeSelection = { fg = palette.fg, bg = "NONE", bold = styles.bold },
-		TelescopeSelectionCaret = { fg = palette.cyn2 },
-
-		TroubleNormal = { bg = "NONE" },
-
-		TreesitterContext = { bg = "NONE" },
-		TreesitterContextLineNumber = { fg = palette.mgt, bg = "NONE" },
 	}
 
 	if styles.transparency then

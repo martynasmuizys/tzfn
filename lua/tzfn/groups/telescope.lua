@@ -1,11 +1,11 @@
-return function(palette, styles, make_border)
+return function(palette, styles)
 	return {
-		TelescopeBorder = make_border(),
-		TelescopeMatching = { fg = palette.red },
+		TelescopeBorder = { fg = palette.cyn, bg = palette.surface },
+		TelescopeMatching = { fg = palette.blu2 },
 		TelescopeNormal = { link = "NormalFloat" },
 		TelescopePromptNormal = { link = "TelescopeNormal" },
 		TelescopePromptPrefix = { fg = palette.cyn2 },
-		TelescopeSelection = { fg = palette.fg, bg = palette.overlay },
+		TelescopeSelection = { fg = "NONE", bg = palette.overlay },
 		TelescopeSelectionCaret = { fg = palette.cyn2, bg = palette.overlay },
 		TelescopeTitle = { fg = palette.red, bold = styles.bold },
 	}
