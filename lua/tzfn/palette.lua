@@ -7,27 +7,27 @@ local variants = {
 		overlay = "#2a3236",
 
 		fg = "#d6d9e0",
-		muted = "#494b4d",
+		muted = "#55585a",
 		subtle = "#969399",
 
 		red = "#f84a12",
-		grn = "#36994e",
+		grn = "#2f8c57",
 		ylw = "#ffaf0a",
 		blu = "#558ba6",
-		mgt = "#a82a5f",
+		mgt = "#b02f67",
 		cyn = "#1da89d",
 
 		red2 = "#fa835c",
-		grn2 = "#5ecc79",
+		grn2 = "#58c987",
 		ylw2 = "#ffb724",
 		blu2 = "#79b9d9",
-		mgt2 = "#db4282",
+		mgt2 = "#e04d8f",
 		cyn2 = "#30dbcd",
 
-		red3 = "#330f04",
-		grn3 = "#12331a",
-		ylw3 = "#332302",
-		blu3 = "#1a2b33",
+		red3 = "#301006",
+		grn3 = "#16301c",
+		ylw3 = "#302306",
+		blu3 = "#182932",
 
 		err = "#d93b55",
 
