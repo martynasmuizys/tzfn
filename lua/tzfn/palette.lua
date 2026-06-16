@@ -3,8 +3,8 @@ local variants = {
 	main = {
 		_nc = "#121414",
 		bg = "#17191a",
-		surface = "#242b2e",
-		overlay = "#303e45",
+		surface = "#202527",
+		overlay = "#2a3236",
 
 		fg = "#d6d9e0",
 		muted = "#494b4d",
