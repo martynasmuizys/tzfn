@@ -33,10 +33,6 @@
 
 ```lua
 config.options = {
-	dim_inactive_windows = false,
-
-	extend_background_behind_borders = true,
-
 	enable = {
 		terminal = true,
 	},
@@ -45,46 +41,19 @@ config.options = {
 		bold = false,
 		italic = true,
 		transparency = false,
+		dim_inactive = false,
 	},
 
-	palette = {},
-
-	groups = {
-		border = "cyn",
-		link = "blu2",
-		panel = "surface",
-
-		error = "err",
-		hint = "cyn",
-		info = "blu",
-		ok = "grn",
-		warn = "ylw",
-		note = "blu",
-		todo = "grn",
-
-		git_add = "grn",
-		git_change = "ylw",
-		git_delete = "red",
-		git_dirty = "mgt",
-		git_ignore = "muted",
-		git_merge = "grn2",
-		git_rename = "grn",
-		git_stage = "grn2",
-		git_text = "mgt",
-		git_untracked = "subtle",
-
-		h1 = "red",
-		h2 = "mgt",
-		h3 = "cyn",
-		h4 = "blu",
-		h5 = "blu2",
-		h6 = "muted",
+	--- Change default palette colors
+	palette = {
+		red = "#dc143c"
 	},
 
 	highlight_groups = {},
 
 	before_highlight = function(group, highlight, palette) end,
 }
+	
 ```
 
 ## Special Thanks
