@@ -7,19 +7,19 @@ local variants = {
 		overlay = "#2a3236",
 
 		fg = "#d6d9e0",
-		muted = "#55585a",
+		muted = "#686c6e",
 		subtle = "#969399",
 
-		red = "#f84a12",
+		red = "#d94a22",
 		grn = "#2f8c57",
-		ylw = "#ffaf0a",
+		ylw = "#e5a21b",
 		blu = "#558ba6",
 		mgt = "#b02f67",
 		cyn = "#1da89d",
 
 		red2 = "#fa835c",
 		grn2 = "#58c987",
-		ylw2 = "#ffb724",
+		ylw2 = "#f4b83f",
 		blu2 = "#79b9d9",
 		mgt2 = "#e04d8f",
 		cyn2 = "#30dbcd",
